@@ -1,0 +1,171 @@
+h2{
+    margin: 0 0 7px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.gameInfo {
+    display: flex;
+    min-width: 256px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 100px;
+}
+
+.myField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opponentField {
+    width: 451px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loadingBLock {
+    width: 451px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.exitBtn {
+    height: 43px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 130px;
+    background-color: #a2d9bf;
+    border: none;
+    color: white;
+    line-height: 43px;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-out;
+}
+
+.exitBtn:hover {
+    background-color: #6f9785;
+}
+
+.modalWindow {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    transform: scale(0);
+}
+
+.modalWindow.active {
+    transform: scale(1);
+}
+
+.modalContent {
+    position: relative;
+    z-index: 4;
+    height: 130px;
+    width: 270px;
+    margin-top: 270px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px 0px 10px;
+    white-space: pre-line;
+    font-size: 20px;
+}
+
+.modalWindow::backdrop {
+    background-color: red;
+}
+
+.opponentShips {
+    background-color: aqua;
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    z-index: -1;
+}
+
+.cellImg {
+    position: relative;
+    z-index: 2;
+}
+
+.shipImg {
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.rocket {
+    display: none;
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    transform: rotate(90deg);
+}
+
+.fallingRocket {
+    z-index: 3;
+    display: block;
+    animation: fall 0.55s;
+    animation-iteration-count: infinite;
+}
+
+.explode {
+    display: none;
+    position: absolute;
+    top: 16px;
+    left: 13px;
+    z-index: 4;
+}
+
+.activeExplode {
+    display: block;
+    animation: explode 0.22s;
+}
+
+@keyframes explode {
+    0% {transform: scale(0);}
+    100% {transform: scale(1.7);}
+}
+
+@keyframes fall {
+    0%  {transform: translateY(-30px) rotate(90deg) scale(1.1)}
+    99% {transform: translateY(10px) rotate(180deg) scale(0.6)}
+    100% {display: none}
+}
+
+@media (max-width: 1600px) {
+    .container {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+}
+
+@media (max-width: 1450px) {
+    .container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}

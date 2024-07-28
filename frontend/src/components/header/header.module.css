@@ -1,0 +1,29 @@
+.header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #a2d9bf;
+}
+
+.heading {
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+}
+
+.btn {
+    height:max-content;
+    border: none;
+    border-radius: 10px;
+    background-color:aquamarine;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    transition: background-color 300ms ease-out;
+}
+
+.btn:hover{
+    background-color: darkcyan;
+}
